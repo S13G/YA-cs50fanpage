@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block title %}
+    <title>Fan Gallery</title>
+    {% endblock %}
+
+    {% block style %}
+    <link rel="stylesheet" href="{% static 'fangallery/fangallery.css' %}">
+    {% endblock %}
+        {% block main %}
+        <h2 class="head">FAN GALLERY&#128525;</h2>
+        <div class="grid">
+            <div class="">
+                <img src="{% static 'assets/girlandguy.jpg' %}" alt="alumnus and alumna" class="">
+            </div>
+            <div class="">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/jmpL2ru-kf0?autoplay=1&mute=1" 
+                title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe>
+            </div>
+            <div class="">
+                <img src="{% static 'assets/yalecs50.jpg' %}" alt="cs50yale" class="">
+            </div>
+            <div class="">
+                <img src="{% static 'assets/fangallery.jpg' %}" alt="cs50 gallery" class="">
+            </div>
+            <div class="">
+                <div class="in">
+                    <img src="{% static 'assets/fangallery3.jpg' %}" alt="cs50 gallery2" class="">
+                </div>
+                <div class="in">
+                    <img src="{% static 'assets/cs50orchestra.jpg' %}" alt="cs50 orchestra" class="">
+                </div>
+            </div>
+            <div class="">
+                <div class="in desktop">
+                    <img src="{% static 'assets/fangallery4.jpg' %}" alt="cs50 puppets" class="">
+                </div>
+                <div class="in">
+                    <img src="{% static 'assets/david-milan.jpg' %}" alt="david milan" class="">
+                </div>
+            </div>
+            <div class="">
+                <img src="{% static 'assets/cs50certificate.png' %}" alt="cs50 certificate" class="">
+            </div>
+            <div class="">
+                <img src="{% static 'assets/joincs50.jpg' %}" alt="join cs50" class="">
+            </div>
+            <div class="">
+                <div class="in">
+                    <img src="{% static 'assets/cs50staffs.jpg' %}" alt="cs50 staffs" class="">
+                </div>
+                <div class="in">
+                    <img src="{% static 'assets/cs50stuffs.png' %}" alt="this is cs50" class="">
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+    

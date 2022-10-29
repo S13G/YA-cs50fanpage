@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% block title %}
+        <title>CS50FanPage</title>
+    {% endblock %}
+    <link
+      rel="icon"
+      href="https://cs50.harvard.edu/x/2022/favicon.ico?1663894800"
+    />
+    <link rel="stylesheet" href="{% static 'base.css' %}" />
+    {% block style %}
+    {% endblock %}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Josefin+Slab:wght@500;700&family=Lato:wght@400;700;900&family=Poppins:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header class="">
+      <div class="nav">
+        <div class="logo">
+          <img src="{% static 'assets/logo.svg' %}" alt="logo" class="" />
+        </div>
+        <nav class="desktop desktop-links">
+          <a href="{% url 'home:index' %}" class="">HOME</a>
+          <a href="{% url 'home:gallery' %}" class="">FAN GALLERY</a>
+          <a href="{% url 'home:comments' %}" class="">COMMENTS</a>
+          <a href="{% url 'home:cswall' %}" class="">CS50 WALL</a>
+        </nav>
+        <nav class="mobile" style="color: #990000; margin-left: 8px">
+          <i class="fa-solid fa-burger fa-3x menu" onclick="show()"></i>
+        </nav>
+      </div>
+    </header>
+    {% block uppermain %}
+    <main class="">
+      <div class="mobile backdrop visible">
+        <div class="nothing" onclick="noShow()"></div>
+        <div class="slide-in right bdr">
+          <div class="content">
+            <div class="c" onclick="noShow()">
+              <div class="circle">
+                <i class="fa-solid fa-xmark fa-2x"></i>
+              </div>
+            </div>
+            <div class="mobile-links">
+              <a href="{% url 'home:index' %}" class="" style="margin-top: 0">HOME</a>
+              <a href="{% url 'home:gallery' %}" class="">FAN GALLERY</a>
+              <a href="{% url 'home:comments' %}" class="">COMMENTS</a>
+              <a href="{% url 'home:cswall' %}" class="">CS50 WALL</a>
+            </div>
+          </div>
+        </div>
+      </div>
+        <!-- main block -->
+        {% block main %}
+        
+        {% endblock %}
+    </main>
+    {% endblock %}
+    <footer class="">
+        <div class="social">
+          <a href="https://web.facebook.com/cs50?_rdc=1&_rdr" class=""><i class="fa-brands fa-facebook fa-2x"></i></a>
+          <a href="https://twitter.com/@cs50" class=""><i class="fa-brands fa-twitter fa-2x"></i></a>
+          <a href="https://www.instagram.com/cs50/" class=""><i class="fa-brands fa-instagram fa-2x"></i></a>
+          <a href="https://www.youtube.com/user/cs50tv" class=""><i class="fa-brands fa-youtube fa-2x"></i></a>
+          <a href="https://github.com/cs50" class=""><i class="fa-brands fa-github fa-2x"></i></a>
+        </div>
+        <div class="copyrt">
+          <p class="">@judetochy-2022</p>
+        </div>
+      </footer>
+    <script src="{% static 'base.js' %}"></script>
+    {% block script %}
+    {% endblock %}
+</body>
+</html>

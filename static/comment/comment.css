@@ -1,0 +1,287 @@
+.main {
+  background-color: rgb(231, 183, 183);
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  padding-bottom: 24px;
+  min-height: 50vh;
+}
+.head {
+  font-size: 24px;
+  font-weight: 700;
+}
+.word {
+  padding: 8px;
+}
+.word .head {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.info p{
+  font-family: "Poppins", sans-serif;
+  color: #000;
+}
+.head hr {
+  background: linear-gradient(130deg, #ff7a18, #af002d 41.07%, #319197 76.05%);
+  width: 150px;
+  height: 3px;
+  border: 0;
+  border-radius: 2px;
+}
+.paddit {
+  margin-top: 24px;
+}
+.info .author p {
+  font-weight: 900;
+  font-size: 1.4rem;
+}
+.info .date {
+  margin-top: 8px;
+}
+.info .date p {
+  font-weight: 400;
+}
+.commentblock p {
+  font-size: 18px;
+}
+.commentblock {
+  font-family: "Poppins", sans-serif;
+}
+.paddit {
+  padding: 16px;
+}
+.commments{
+  min-height: 50vh;
+}
+.info,
+.commentblock {
+  margin-left: 8px;
+}
+.info {
+  margin-top: 16px;
+}
+.commentgrid hr {
+  width: 60%;
+  height: 1px;
+  border: 0;
+  background: rgba(153, 0, 0, 0.8);
+}
+.commentblock {
+  margin-top: 16px;
+  padding: 1rem;
+  border-radius: 8px;
+  min-height: 80px;
+  background: rgba(153, 0, 0, 0.8);
+  color: #fff;
+  font-size: 16px;
+  line-height: 24px;
+}
+.commentgrid {
+  margin-top: 24px;
+}
+.commentgrid:nth-of-type(1) {
+  margin-top: 0;
+}
+.commentbutton {
+  margin-top: 32px;
+  padding: 16px;
+  display: flex;
+  justify-content: right;
+}
+.commentbutton button {
+  height: 40px;
+  width: 120px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: 0;
+  border: 0;
+  color: rgba(153, 0, 0, 0.8);
+  background: #fff;
+  cursor: pointer;
+  border: 2px solid #990000;
+}
+.commentbutton button:hover {
+  background: rgba(153, 0, 0, 0.8);
+  color: #fff;
+  border: 0;
+}
+.commentbutton p {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+}
+.commentbutton i {
+  margin-left: 8px;
+}
+.form form img {
+  margin-top: -50px;
+}
+.form div label {
+  width: 100%;
+  padding: 4px;
+  font-weight: 600;
+}
+.form {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  height: 100vh;
+  width: 100vw;
+  backdrop-filter: blur(5px);
+  margin-left: -50vw;
+  margin-top: -50vh;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  visibility: hidden;
+  background: rgba(0, 0, 0, 0.25);
+}
+.form .nothing{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+.form form {
+  background: #fff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  width: 95%;
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transform: scale(0.1); 
+  transition: transform 0.4s;
+}
+.form .error, .django-error {
+    font-weight: 500;
+    margin-top: 4px;
+}
+.django-error{
+    display: flex;
+    align-items: center;
+}
+.django-error a{
+    font-weight: 600;
+    font-size: 12px;
+    color: red;
+    margin-left: 4px;
+    font-family: "Poppins", sans-serif;
+}
+.form .error, .django-error {
+  color: red;
+  visibility: hidden;
+  transition: 0.2s;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+}
+#alumnus, #alumna{
+    display: none;
+}
+.sub {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 8px;
+}
+.sub p{
+    padding-left: 8px;
+}
+.view{
+    visibility: visible;
+    transition: 1s;
+    background: rgba(0, 0, 0, 0.25);
+  }
+.form div input {
+  width: 100%;
+  border: 3px solid #ececec;
+  border-radius: 10px;
+  padding: 8px;
+  height: 45px;
+  outline: 0;
+  margin-top: 4px;
+  font-size: 17px;
+}
+.form div textarea {
+  width: 100%;
+  border: 3px solid #ececec;
+  border-radius: 10px;
+  padding: 8px;
+  outline: 0;
+  margin-top: 4px;
+  font-size: 17px;
+}
+.form .submit {
+  margin-top: 16px;
+}
+.submit button {
+  height: 35px;
+  outline: 0;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  cursor: pointer;
+  border: 0;
+  border-radius: 5px;
+  background: red;
+  color: #fff;
+}
+.submit button:hover{
+    background: #990000;
+}
+@media screen and (min-width: 450px) and (max-width: 600px) {
+  .form form {
+    width: 70%;
+  }
+}
+@media screen and (min-width: 728px) {
+  .paddit {
+    padding: 24px;
+  }
+  .comments {
+    padding: 16px;
+  }
+  .info {
+    margin-top: 0;
+  }
+  .commentgrid .commentblock {
+    padding: 1rem;
+    border-radius: 8px;
+    min-height: 80px;
+    background: rgba(153, 0, 0, 0.8);
+    color: #fff;
+    font-size: 16px;
+    margin-top: 0;
+  }
+  .commentgrid {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    border-top: 1px solid rgba(153, 0, 0, 0.8);
+    border-top-right-radius: 8px;
+    margin-top: 24px;
+  }
+  .commentbutton {
+    display: flex;
+    justify-content: center;
+  }
+  .form form {
+    width: 60%;
+  }
+  .main{
+    padding-bottom: 32px;
+  }
+}
+
+@media screen and (min-width: 998px) {
+  .form form {
+    width: 30%;
+  }
+}

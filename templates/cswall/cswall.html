@@ -1,0 +1,241 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block style %}
+    <link rel="stylesheet" href="{% static 'wall/style.css' %}">
+    {% endblock %}
+
+    {% block uppermain %}
+    <main class="">
+        <div class="mobile backdrop visible">
+            <div class="nothing" onclick="noShow()">
+            </div>
+            <div class="slide-in right bdr">
+                <div class="content">
+                    <div class="c" onclick="noShow()">
+                        <div class="circle">
+                            <i class="fa-solid fa-xmark fa-2x"></i>
+                        </div>
+                    </div>
+                    <div class="mobile-links">
+                        <a href="{% url 'home:index' %}" class="" style="margin-top: 0;">HOME</a>
+                        <a href="{% url 'home:gallery' %}" class="">FAN GALLERY</a>
+                        <a href="{% url 'home:comments' %}" class="">COMMENT</a>
+                        <a href="#" class="">CS50 WALL</a>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="wall">
+        <div class="wall-img">
+            <h2 class="spec">CS50 WALL</h2>
+        </div>
+        <div class="names">
+            <div class="grid">
+            </div>
+            <div class="grid">
+            </div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+        </div>
+        <div class="popup form-popup">
+            <div class="nothing" onclick="off()"></div>
+            <form class="nameForm" method='post' action="{% url 'home:cswall' %}">
+                {% csrf_token %}
+                <p class="error local-error" style="text-align:center;">
+                    Your Name is on CSWall already!
+                </p>
+                <input type="hidden" name="gridnumber" id="hiddengrid">
+                <div class="sub" style="margin-top: 0;">
+                    <label for="name">Nickname</label>
+                    <input type="text" name="name" id="name" placeholder="nickname here">
+                    <p class="error name-error">Name cannot be empty</p>
+                </div>
+                <div class="sub">
+                    <label for="name">Font</label>
+                    <select name="font" id="font">
+                    
+                    </select>
+                    <p class="error font-error">You must select a font</p>
+                </div>
+                <div class="sub">
+                    <label for="link">Social link</label>
+                    <input type="url" name="link" id="link" placeholder="linkedin or github or twitter">
+                    <p class="error link-error">Social link cannot be empty</p>
+                </div>
+                <div class="sub">
+                    <button type="submit">Add</button>
+                </div>
+            </form>
+        </div>
+        <div class="info-popup popup">
+            <div class="nothing bdr" onclick="iOff()"></div>
+            <div class="info">
+                <div class="think">
+                    <img src="{% static 'assets/thinkingLady.svg' %}" alt="thinking" class="">
+                </div>
+                <p>Click an empty space on the wall  or click the Add button
+                    at the bottom of the page to add to the WALL.
+                </p>
+                <div class="info-btn">
+                    <button onclick="iOff()">OK</button>
+                </div>
+            </div>
+        </div>
+        <div class="cancel-popup popup">
+            <div class="nothing" onclick="cOff()"></div>
+            <div class="c-info">
+                <p></p>
+                <div class="info-btn">
+                    <button onclick="cOff()">OK</button>
+                </div>
+            </div>
+        </div>
+        <div class="button">
+            <button class="">Add Name</button>
+        </div>
+    </div>
+    {% endblock %}
+
+    {% block script %}
+    <script src="../static/wall/script.js"></script>
+    {% endblock %}
+</body>
+</html>

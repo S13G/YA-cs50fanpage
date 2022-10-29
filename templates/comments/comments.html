@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block title %}
+    <title>Comments</title>
+    {% endblock %}
+
+    {% block style %}
+    <link rel="stylesheet" href="{% static 'comment/comment.css' %}" />
+    {% endblock %}
+    
+    {% block main%}
+      <div class="main">
+        <div class="word">
+          <div class="head">
+            <h2>Comments</h2>
+            <hr />
+          </div>
+        </div>
+        <div class="paddit">
+          <div class="comments">
+            {% if comments %}
+            {% for comment in comments %}
+            <div class="commentgrid">
+              <div class="mobile"><hr /></div>
+              <div class="info">
+                <div class="author"><p>{{ comment.author }}</p></div>
+                <div class="date"><p># {{ comment.str_date}}</p></div>
+              </div>
+              <div class="commentblock">
+                <p>{{ comment.text }}</p>
+              </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+          </div>
+        </div>
+        <div class="form">
+            <div class="nothing" onclick="off()"></div>
+          <form novalidate method="post" action="{% url 'home:comments' %}">
+            {% csrf_token %}
+            <img src="{% static 'assets/male2.svg' %}" alt="alumnus" id="alumnus">
+            <img src="{% static 'assets/female2.svg' %}" alt="alumna" id="alumna" />
+            <p class="django-error">Email cannot be empty!</p>
+            <div class="sub">
+              <label for="text">Code Name</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="your name here... e.g cyborg"
+              />
+              <p class="error name">Name cannot be empty!</p>
+            </div>
+            <div class="sub">
+              <label for="comments" class="">Comment</label>
+              <textarea
+                name="comments"
+                id="comment"
+                cols="30"
+                rows="5"
+                placeholder="your comments here"
+              ></textarea>
+              <p class="error comment">Comment cannot be empty!</p>
+            </div>
+            <div class="submit">
+              <button type="submit">Post Comment</button>
+            </div>
+          </form>
+        </div>
+        <div class="commentbutton">
+          <button id="pen">
+            <p>Comment</p>
+            <i class="fa-solid fa-pen"></i>
+          </button>
+        </div>
+      </div>
+      {% endblock %}
+   
+      {% block script %}
+      <script src="{% static 'comment/script.js' %}"></script>
+      {% endblock %}
+  </body>
+</html>

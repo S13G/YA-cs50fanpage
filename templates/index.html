@@ -1,0 +1,328 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+        <title>CS50FanPage</title>
+    {% endblock %}
+
+    {% block style %}
+    <link rel="stylesheet" href="{% static 'home/style.css' %}" />
+    {% endblock %}
+
+    {% block main %}
+      <div class="hero">
+        <div class="bg">
+          <img
+            src="{% static 'assets/cs50rubberduck.jpg' %}"
+            alt="background"
+            class=""
+          />
+        </div>
+        <div class="word">
+          <div class="h">
+            <h1 class="head">
+              This
+              <span class=""> <p>IS</p> </span>CS50
+              <div class="desktop">
+                <hr />
+              </div>
+            </h1>
+            <div class="desktop">
+              <i class="fa-solid fa-spinner fa-5x spinner paused"></i>
+            </div>
+            <div class="mobile">
+              <i class="fa-solid fa-spinner fa-2x spinner paused"></i>
+            </div>
+          </div>
+          <div class="gifs desktop">
+            <div class="fr">
+              <i class="fa-solid fa-rocket fa-3x rocket paused"></i>
+            </div>
+            <div class="img">
+              <div class="">
+                <img
+                  src="https://cdn.cs50.net/2016/fall/video_projects/staff_gifs/harvard/gifs/Arturo-Real.gif"
+                  alt="arturo"
+                  class=""
+                />
+              </div>
+              <div class="not-tab">
+                <img
+                  src="https://cdn.cs50.net/2016/fall/video_projects/staff_gifs/harvard/gifs/Brian-Yu.gif"
+                  alt="brian yu"
+                  class=""
+                />
+              </div>
+              <div class="">
+                <img
+                  src="https://cdn.cs50.net/2016/fall/video_projects/staff_gifs/harvard/gifs/Athena-Kan.gif"
+                  alt="athena"
+                  class=""
+                />
+              </div>
+              <div class="not-tab">
+                <img
+                  src="https://cdn.cs50.net/2016/fall/video_projects/staff_gifs/harvard/gifs/Xingchi-Dai.gif"
+                  alt="xingchi"
+                  class=""
+                />
+              </div>
+              <div class="">
+                <img
+                  src="https://cdn.cs50.net/2016/fall/video_projects/staff_gifs/harvard/gifs/Benjamin-Doran.gif"
+                  alt="benjamin"
+                  class=""
+                />
+              </div>
+              <div class="">
+                <img
+                  src="https://cdn.cs50.net/2016/fall/video_projects/staff_gifs/harvard/gifs/Brian-Arroyo.gif"
+                  alt="brian arroyo"
+                  class=""
+                />
+              </div>
+              <div class="not-tab">
+                <img
+                  src="https://cdn.cs50.net/2016/fall/video_projects/staff_gifs/harvard/gifs/Hillary-Do.gif"
+                  alt="hillary"
+                  class=""
+                />
+              </div>
+              <div class="not-tab">
+                <img
+                  src="https://cdn.cs50.net/2016/fall/video_projects/staff_gifs/harvard/gifs/Ava-Ganik.gif"
+                  alt="ava"
+                  class=""
+                />
+              </div>
+              <div class="">
+                <img
+                  src="https://cdn.cs50.net/2016/fall/video_projects/staff_gifs/harvard/gifs/Colton-Ogden.gif"
+                  alt="colton"
+                  class=""
+                />
+              </div>
+              <div class="not-tab">
+                <img
+                  src="https://cdn.cs50.net/2016/fall/video_projects/staff_gifs/harvard/gifs/David%20J.-Malan.gif"
+                  alt="milan"
+                  class=""
+                />
+              </div>
+              <div class="">
+                <img
+                  src="https://cdn.cs50.net/2016/fall/video_projects/staff_gifs/harvard/gifs/Helen-Wu.gif"
+                  alt="helen"
+                  class=""
+                />
+              </div>
+              <div class="">
+                <img
+                  src="https://cdn.cs50.net/2016/fall/video_projects/staff_gifs/harvard/gifs/Ethan-Zou.gif"
+                  alt="ethan"
+                  class="not-tab"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="under desktop not-tab">
+          <div class="">
+            <h2 class="head">
+              <span id="enrolled">2000000</span> Alumni Already!
+            </h2>
+          </div>
+          <div class="flagcont">
+            <div class="flags">
+              <img src="{% static 'assets/country1.jpg' %}" alt="usa" class="" />
+              <img src="{% static 'assets/country2.png' %}" alt="nigeria" class="" />
+              <img src="{% static 'assets/country3.webp' %}" alt="britain" class="" />
+              <img
+                src="{% static 'assets/country4.webp' %}"
+                alt="south africa"
+                class=""
+              />
+              <img src="{% static 'assets/country5.png' %}" alt="ghana" class="" />
+            </div>
+            <p class="">Over 20 Countries</p>
+          </div>
+          <div class="join">
+            <p>Join Our Group of</p>
+            <div class="buttons alumni">
+              <button class="" type="submit" value="alumna">ALUMNA</button>
+              <button class="" type="submit" value="alumnus">ALUMNUS</button>
+            </div>
+          </div>
+        </div>
+        <div class="volume" style="color: #000">
+          <div class="nothing" onclick="clearVolume()"></div>
+          <i class="fa-solid fa-play fa-2x"></i>
+        </div>
+        <div class="form">
+          <div class="nothing off"></div>
+          <form class="" novalidate method="post" action="{% url 'home:index' %}">
+            {% csrf_token %}
+            <img
+              src="{% static 'assets/redcapgirl.svg' %}"
+              alt="alumna"
+              id="alumna"
+            />
+            <img
+              src="{% static 'assets/redglassguy.svg' %}"
+              alt="alumnus"
+              id="alumnus"
+            />
+            <p class="django-error">Invalid details django</p>
+            <div class="email" style="margin-top: 0px">
+              <label class="">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="e.g jude@gmail.com"
+              />
+              <p class="error">Email cannot be empty!</p>
+            </div>
+            <div class="note">
+              <label class="">Alumni Note</label>
+              <input
+                type="text"
+                name="note"
+                id="note"
+                placeholder="type: I took CS50"
+              />
+              <p class="error">Notes cannot be empty!</p>
+            </div>
+            <div class="submit">
+              <button type="submit">Join!</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="mobile below">
+        <div class="img">
+          <div class="">
+            <img
+              src="https://cdn.cs50.net/2016/fall/video_projects/staff_gifs/harvard/gifs/Arturo-Real.gif"
+              alt="arturo"
+              class=""
+            />
+          </div>
+          <div class="">
+            <img
+              src="https://cdn.cs50.net/2016/fall/video_projects/staff_gifs/harvard/gifs/Athena-Kan.gif"
+              alt="athena"
+              class=""
+            />
+          </div>
+          <div class="">
+            <img
+              src="https://cdn.cs50.net/2016/fall/video_projects/staff_gifs/harvard/gifs/Helen-Wu.gif"
+              alt="helen"
+              class=""
+            />
+          </div>
+          <div class="">
+            <img
+              src="https://cdn.cs50.net/2016/fall/video_projects/staff_gifs/harvard/gifs/Brian-Yu.gif"
+              alt="brian yu"
+              class=""
+            />
+          </div>
+        </div>
+      </div>
+      <div class="trusted">
+        <div class="">
+          <h2 class="head">
+            <span id="menrolled">2000000</span> Alumni Already!
+          </h2>
+        </div>
+        <div class="flagcont off">
+          <div class="flags">
+            <img src="{% static 'assets/country1.jpg' %}" alt="usa" class="" />
+            <img src="{% static 'assets/country2.png' %}" alt="nigeria" class="" />
+            <img src="{% static 'assets/country3.webp' %}" alt="britain" class="" />
+            <img
+              src="{% static 'assets/country4.webp' %}"
+              alt="south africa"
+              class=""
+            />
+            <img src="{% static 'assets/country5.png' %}" alt="ghana" class="" />
+            <img src="{% static 'assets/country6.png' %}" alt="ukraine" class="" />
+          </div>
+          <p class="">Over 20 Countries</p>
+        </div>
+        <div class="join">
+          <div class="shadow">
+            <p>Join Our Group of</p>
+            <div class="buttons alumni">
+              <button class="" value="alumna">ALUMNA</button>
+              <button class="" value="alumnus">ALUMNUS</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="not-enrolled">
+        <h2 class="head">
+          Are you a NewBie trying to startout in Tech? &#128512;
+        </h2>
+        <div class="beginner">
+          <img src="{% static '/assets/googlesearch.JPG' %}" alt="beginner" class="" />
+          <h2 class="blured">YOUR SEARCH HAS ENDED!!</h2>
+        </div>
+        <div class="move">
+          <i class="fa-solid fa-car-side fa-3x car"></i>
+          <h3>CS50</h3>
+        </div>
+        <div class="register">
+          <div class="cs go-left">
+            <a href="https://rb.gy/twonkf" class=""
+              ><img src="{% static '/assets/fullred.jpg' %}" alt="cs50" class=""
+            /></a>
+          </div>
+          <div class="wait">
+            <div class="txt go-left">
+              <h3>
+                JOIN
+                <a href="https://rb.gy/twonkf" class="">CS50</a> NOW &#128525;
+              </h3>
+              <div class="tutors">
+                <div class="">
+                  <img
+                    src="https://cdn.cs50.net/2016/fall/video_projects/staff_gifs/harvard/gifs/Zack-Chauvin.gif"
+                    alt="Zack"
+                    class=""
+                  />
+                </div>
+                <div class="">
+                  <img
+                    src="https://cdn.cs50.net/2016/fall/video_projects/staff_gifs/harvard/gifs/Zamyla-Chan.gif"
+                    alt="Zamyla"
+                    class=""
+                  />
+                </div>
+                <div class="desktop">
+                  <img
+                    src="https://cdn.cs50.net/2016/fall/video_projects/staff_gifs/harvard/gifs/Marcus-Powers.gif"
+                    alt="Marcus"
+                    class=""
+                  />
+                </div>
+              </div>
+              <h3>&#128151;We are Waiting...</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- <embed src="./static/assets/themesong.mp3" loop="true" autostart="true" width="2" height="0" id="themesong"> -->
+    <audio>
+      <source src="{% static '/assets/themesong.mp3' %}" type="audio/mpeg" />
+    </audio>
+    {% endblock %}
+    
+    {% block script %}
+    <script src="{% static '/home/home.js' %}"></script>
+    {% endblock %}
+  </body>
+</html>
